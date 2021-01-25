@@ -49,7 +49,6 @@ export default class CustomDataSyncRecordsPicker extends LightningElement {
 
     handleDropDownChange(event) {
         this.ddvalue = event.detail.value;
-        alert(this.ddvalue);
     }
     searchChangeHandler(event){
         this.searchTerm = event.target.value;

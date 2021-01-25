@@ -50,9 +50,6 @@ export default class CustomDataSyncFieldsPicker extends LightningElement {
                });
            }
            this.dispatchEvent(stepChangeEvent);
-
-           //todo save the data to the db first then fire the event
-
            
     }
 
