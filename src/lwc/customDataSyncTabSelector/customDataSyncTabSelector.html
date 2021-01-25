@@ -1,0 +1,33 @@
+<template>
+    <div class="mainAppWrapper">
+        <lightning-card title="Custom Data Sync" icon-name="standard:dataset">
+            <lightning-tabset>
+                <template if:true={isAdmin}>
+                    <lightning-tab label="Batch Sync Fields">
+                        <c-custom-data-sync-fields-picker options={fieldsToShow} value={selectedAdminSyncFields} isadmin={isAdmin} step="0" oncustomdatasyncstepchange={stepChangeHandler}></c-custom-data-sync-fields-picker>
+                    </lightning-tab>
+                </template>
+                <lightning-tab label="Sync Fields">
+                    <c-custom-data-sync-fields-picker options={fieldsToShow} value={selectedSyncFields} step="1" oncustomdatasyncstepchange={stepChangeHandler}></c-custom-data-sync-fields-picker>
+                </lightning-tab>
+                <template if:true={showRecordsUI}>
+                    <lightning-tab label="Select Records" value="select-records">
+                        <c-custom-data-sync-records-picker 
+                        columns={columns} 
+                        options={tableSearchByFieldOptions} 
+                        records={searchedRecords} 
+                        onsearch={searchHandler} 
+                        shownext={paginationParams.shownext} 
+                        showprevious={paginationParams.showprevious} 
+                        currentrecordpage={currentRecordsPage} 
+                        onnext={paginationHandler} 
+                        onprevious={paginationHandler} 
+                        onsyncaction={syncDataActionHandler}></c-custom-data-sync-records-picker>
+                    </lightning-tab>
+                </template>
+            </lightning-tabset>   
+        </lightning-card>
+    <c-custom-data-sync-busy-status show={busy}></c-custom-data-sync-busy-status>
+    </div>
+   
+</template>

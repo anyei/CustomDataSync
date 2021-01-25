@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom Data Sync</fullName>
+    <description>Custom Data Sync is a custom solution in response to a challenge by clara perez.</description>
+    <types>
+        <members>CustomDataSyncBatch</members>
+        <members>CustomDataSyncBatchIterable</members>
+        <members>CustomDataSyncBatchIterator</members>
+        <members>CustomDataSyncController</members>
+        <members>CustomDataSyncHelper</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Custom_Data_Sync_Batch_Execution__c.Apex_Job_Id__c</members>
+        <members>Custom_Data_Sync_Batch_Execution__c.Detail__c</members>
+        <members>Custom_Data_Sync_Batch_Execution__c.Finish_Time__c</members>
+        <members>Custom_Data_Sync_Batch_Execution__c.Start_Time__c</members>
+        <members>Custom_Data_Sync_Batch_Execution__c.State__c</members>
+        <members>Custom_Data_Sync_Field_Preference__c.Preference_Scope__c</members>
+        <members>Custom_Data_Sync_Field_Preference__c.User__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.Domain__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.External_Id_Field__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.JWT__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.Org_Description__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.SourceDomain__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt.SourceJWT__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>customDataSyncAdminProfileId</members>
+        <members>customDataSyncFixedExternalId</members>
+        <members>customDataSyncSalesforceBulkApiEndpoint</members>
+        <members>customDataSyncSalesforceCompositeEndPoint</members>
+        <members>customDataSyncTargetObject</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Custom_Data_Sync_Batch_Execution__c</members>
+        <members>Custom_Data_Sync_Field_Preference__c</members>
+        <members>Custom_Data_Sync_Target_Org__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Custom_Data_Sync_Batch_Execution__c-Custom Data Sync Batch Execution Layout</members>
+        <members>Custom_Data_Sync_Field_Preference__c-Custom Data Sync Field Preference Layout</members>
+        <members>Custom_Data_Sync_Target_Org__mdt-Custom Data Sync Target Org Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>customDataSyncBusyStatus</members>
+        <members>customDataSyncFieldsPicker</members>
+        <members>customDataSyncRecordsPicker</members>
+        <members>customDataSyncTabSelector</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>50.0</version>
+</Package>

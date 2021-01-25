@@ -1,0 +1,82 @@
+<template>
+    <div class="slds-grid slds-grid_vertical slds-box">
+        <div class="slds-col">
+            <div class="slds-form">
+                <fieldset class="slds-form-element slds-form-element_compound">
+                    <div class="slds-form-element__control">
+                      <div class="slds-form-element__row">
+                        <div class="slds-size_3-of-12">
+                            <div class="slds-form-element">
+                              <label class="slds-form-element__label" for="input-02">Filter By Field:</label>
+                              <div class="slds-form-element__control">
+                                  <lightning-combobox
+                                  name="filter"
+                                  value={ddvalue}
+                                  options={options}
+                                  onchange={handleDropDownChange} ></lightning-combobox>                        
+                                </div>
+                            </div>
+                          </div>
+
+                        <div class="slds-size_7-of-12">
+                          <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-01">Search</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="stacked-input-id-01" placeholder="Search.." class="slds-input" onkeyup={searchChangeHandler} />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-size_1-of-12 buttonssection">
+                            <lightning-button-icon icon-name="utility:search"  alternative-text="Search" title="Search" onclick={searchActionHandler}></lightning-button-icon>
+                        </div>
+                        <div class="slds-size_1-of-12 buttonssection">
+                            <lightning-button-icon icon-name="utility:play"  alternative-text="Search" title="Sync Data" onclick={syncData}></lightning-button-icon>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </fieldset>
+            </div>
+        </div>
+        <div class="slds-col">
+           <!-- <template if:true={showValidationMessage}>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+                    <span class="slds-assistive-text">warning</span>
+                    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+                        <lightning-icon icon-name="utility:warning" alternative-text="warning" title="warning"></lightning-icon>
+                    </span>
+                    <h2>
+                        Too many rows selected ({allSelectedRows.length}), max allowed {maxRows}.
+                    </h2>
+                    <div class="slds-notify__close"></div>
+                  </div>
+            </template>-->
+            <div class="slds-scrollable" style="height: 300px;">
+                <lightning-datatable
+                        key-field="Id"
+                        data={records}
+                        columns={columns}
+                        max-row-selection={maxRows}
+                        selected-rows={allSelectedRecordsForTable}
+                        onrowselection={selectedRowsChangeHandler}
+                        onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </div> 
+        </div>
+        <div class="slds-col">
+            <div class="slds-clearfix">
+                <div class="slds-float_left">
+                   Selected rows: {allSelectedRows.length}
+                </div>
+                <div class="slds-float_right">
+                    <template if:true={showprevious}><button class="slds-button slds-button_neutral"  onclick={previousActionHandler}>Previous</button></template>
+                    <template if:true={shownext}><button class="slds-button slds-button_neutral" onclick={nextActionHandler}>Next</button></template>
+                </div>
+              </div>
+           
+        </div>
+
+    </div>
+
+</template>

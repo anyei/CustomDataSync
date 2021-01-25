@@ -1,0 +1,48 @@
+<template>
+   
+    
+
+    <div class="slds-form">
+        <div class="slds-form-element slds-form-element_stacked">
+        <label class="slds-form-element__label" for="stacked-input-id-01">Quick search</label>
+        <div class="slds-form-element__control">
+        <input type="text" id="stacked-input-id-01" placeholder="Search a field label" class="slds-input" onkeyup={searchChangeHandler} />
+        </div>
+        </div>
+        <div class="slds-form-element slds-form-element_stacked">
+            <div class="slds-form-element__control">
+                <div class="slds-scrollable" style="height:10rem;">
+                    <lightning-checkbox-group name="field-list"
+                    label="Fields"
+                    options={optionList}
+                    value={value}
+                    onchange={selectedFieldsChange}
+                    required></lightning-checkbox-group>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="slds-form-element slds-form-element_stacked">
+            <div class="slds-form-element__control">
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_9-of-12">
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <template if:false={isadmin}>
+                            <button class="slds-button slds-button_brand" style="margin-right:0px" onclick={saveSelectionAndContinue}>Save &amp; Continue</button>
+                        </template>
+
+                        <template if:true={isadmin}>
+                            <button class="slds-button slds-button_brand" style="margin-right:0px" onclick={saveSelectionAndContinue}>Save</button>
+                        </template>
+                        
+                    </div>
+                  </div>
+
+            </div>
+            </div>
+        </div>
+    
+</template>
