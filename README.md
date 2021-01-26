@@ -16,7 +16,15 @@ With sfdx is just one command, make sure you have authenticated and authorized:
 ```sfdx force:mdapi:deploy -d ./src -u usernameofyourorg```
 
 
-###Configure
+### Configure
+
+
+##### Profiles
+
+Make sure the apex classes are enabled to your profiles:
+
+- CustomDataSyncController
+- CustomDataSyncHelper
 
 You need to make sure of the following:
 
