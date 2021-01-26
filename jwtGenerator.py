@@ -1,4 +1,4 @@
-# pip install jwt cryptography requests
+# pip3 install pyJWT cryptography requests
 
 from datetime import datetime
 import jwt
