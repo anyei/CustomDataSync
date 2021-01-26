@@ -6,6 +6,7 @@
         <members>CustomDataSyncBatch</members>
         <members>CustomDataSyncBatchIterable</members>
         <members>CustomDataSyncBatchIterator</members>
+        <members>CustomDataSyncBatchScheduler</members>
         <members>CustomDataSyncBatchTest</members>
         <members>CustomDataSyncController</members>
         <members>CustomDataSyncControllerTest</members>

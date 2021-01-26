@@ -87,6 +87,19 @@ public class CustomDataSyncBatchTest {
         system.assert(batchExecution.state__c == 'In Progress');
     }
     
+     @istest
+    public static void CustomDataSyncBatchSchedulerTest(){
+        CustomDataSyncHelperTest.GenerateMockConfig();
+        boolean result = false;
+        test.starttest();
+        system.schedule('test schedule for me', '0 0 22 * * ? *', new CustomDataSyncBatchScheduler(10000));
+        result = true;
+        test.stoptest();
+        
+        
+        system.assert(result);
+    }
+    
     
     
 
