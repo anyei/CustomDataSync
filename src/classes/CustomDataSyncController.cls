@@ -1,3 +1,7 @@
+/*
+ * created by : angel robles
+ * test class : CustomDataSyncControllerTest
+ */ 
 public with sharing class CustomDataSyncController {
     @AuraEnabled
     public static map<string, ObjectDescribeResult > fetchFieldsOfObject(string objectToDescribe) {
@@ -74,7 +78,7 @@ public with sharing class CustomDataSyncController {
     @AuraEnabled
     public static List<sobject> fetchObjectRecords(string term, string selectfields, string filterfield, string targetobj, integer take, integer offset){
         string likeTerm = '%' + term +'%';
-        if(!selectFields.contains(system.label.customDataSyncFixedExternalId ))
+        if(!selectFields.contains(','+system.label.customDataSyncFixedExternalId ) && !selectFields.contains(system.label.customDataSyncFixedExternalId+',') )
             selectFields += ','+system.label.customDataSyncFixedExternalId;
         string q= 'select id,'+selectfields + ' from '+targetobj +
             (!string.isEmpty(filterfield) && !string.isEmpty(term) ? ' where ' + filterfield + ' like :likeTerm' : '') +
@@ -98,12 +102,6 @@ public with sharing class CustomDataSyncController {
         @auraEnabled public string inlineHelpText {get;set;}
         @auraEnabled public string label {get;set;}
         @auraEnabled public string apiName {get;set;}
-        @auraEnabled public string controllingFieldApiName {get;set;}
-        @auraEnabled public ObjectDescribeResult targetObject {get;set;}
-        @auraEnabled public map<string,string> picklistValues {get;set;}
-        @auraEnabled public map<string, list<string>> childDependantsPicklistValues {get;set;}
-        
-        
     }
     public class ObjectDescribeResult {
         @auraEnabled public string apiName {get;set;}

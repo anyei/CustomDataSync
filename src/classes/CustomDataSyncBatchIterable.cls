@@ -1,7 +1,7 @@
 /*
  * created date : 1/23/2021
  * create by : angel robles
- * test class : CustomDataSyncBatchIterableTest
+ * test class : CustomDataSyncBatchTest
  * 
  */ 
 public class CustomDataSyncBatchIterable implements Iterable<object> {

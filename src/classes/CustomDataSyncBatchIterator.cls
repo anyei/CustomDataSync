@@ -1,7 +1,7 @@
 /*
  * created by : angel robles
  * created date: 1/22/2021
- * test class CustomDataSyncBatchIteratorTests
+ * test class : CustomDataSyncBatchTest
  * 
  * */
 public class CustomDataSyncBatchIterator implements Iterator<object> {
@@ -54,23 +54,4 @@ public class CustomDataSyncBatchIterator implements Iterator<object> {
        }
        return null;
    } 
-    /*
-   void computeBoundId(){
-       this.boundid='';
-           //list<sobject> records = database.query('select id from '+ system.label.customDataSyncTargetObject +' order by id limit '+this.take);
-           //this.boundid = records.size() > 0 ? string.valueof(records[records.size() - 1].get('id')) : '';
-           //string lastboundid = this.boundid;
-           //list<sobject> records = database.query('select id from '+ system.label.customDataSyncTargetObject +' where id > \''+ lastboundid +'\' order by id limit 1');
-          // this.boundid = records.size() > 0 ? string.valueof(records[0].get('id')) : '';
-       if(!string.isEmpty(contentResponse) && contentResponse != 'NO_RECORDS'){
-            list<string> lines = contentResponse.split('\n');
-            string lastline = lines[lines.size() -1];
-            try{
-               string biddirty = lastline.substring(0, 20);
-               boundid = biddirty.remove('"');
-           }catch(Exception err){
-               system.assert(false, lastline);
-            } 
-       }
-    }*/
 }

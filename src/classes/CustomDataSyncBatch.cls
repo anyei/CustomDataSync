@@ -111,7 +111,7 @@ public class CustomDataSyncBatch implements Database.Batchable<object>, Database
        if(upsertjobidstocheckstatus.size() > 0){
            CustomDataSyncBatch batch = new CustomDataSyncBatch(this.take, 'process', upsertjobidstocheckstatus, this.customBatchJobId);
            update new Custom_Data_Sync_Batch_Execution__c(Detail__c=string.join(errorDetails, ' '), id=customBatchJobId);
-           database.executeBatch(batch, 1);
+           if(!test.isRunningTest()) database.executeBatch(batch, 1);
        }else{
             update new Custom_Data_Sync_Batch_Execution__c(state__c='Complete', Finish_Time__c=DateTime.Now(), id=customBatchJobId);
        }
