@@ -127,6 +127,9 @@ To use the API, the RSA private key and the _Consumer Key_ (aka client ID) from 
    
 ##### Run jwtGenerator.py script
 
+Install dependencies, running with python3's pip:
+```pip3 install pyJWT cryptography requests```
+
 Open the file jwtGenerator.py which you can find in this repository and update the following variables:
 
 - IS_SANDBOX
