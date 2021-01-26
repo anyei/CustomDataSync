@@ -70,15 +70,14 @@ A record for **Custom Data Sync Target Org** custom metadata type is required wi
 
 Add the lwc **customDataSyncTabSelector** to the page you desired to see the tool running.
  
- 
- ### How to generate a JWT 
- ### Taken from https://gist.github.com/booleangate/30d345ecf0617db0ea19c54c7a44d06f
- 
- ##### Schedule it
+##### Schedule it
  
  In order to allow it to run every now and then automatically, make sure to schedule the using the cron fits your need, the following is to schedule the job every day at 8pm.
  ```system.schedule('Custom Data Sync batch', '0 0 20 * * ? *', new CustomDataSyncBatchScheduler(10000));```
  
+ 
+ ### How to generate a JWT 
+ ### Taken from https://gist.github.com/booleangate/30d345ecf0617db0ea19c54c7a44d06f
  
  
  ##### Salesforce OAuth 2.0 JWT Bearer Token Flow Walk-Through
