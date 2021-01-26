@@ -36,7 +36,7 @@ After you install, you must make sure the salesforce instance server where you w
 2. Then in the left menu, click on "Security Controls" -> "Remote Site Settings" option 
 3. If you dont have an entry of your target salesforce instance, click "New Remote Site" button 
 4. Put a name name to that entry in the "Remote Site Name" field, could be something like "salesforce sandbox" or "salesforce prod"
-5. In the "Remote Site URl" type in the correct url of the target salesforce instance, mine looks like "https://na17.salesforce.com" without quotes 
+5. In the "Remote Site URl" type in the correct url of the target salesforce instance (either https://login.salesforce.com or https://test.salesforce.com) without quotes 
 6. Finally make sure the "Active" checkbox is checked and save the record. 
 
 ##### Custom Labels
@@ -61,7 +61,7 @@ A record for **Custom Data Sync Target Org** custom metadata type is required wi
 - JWT
     - A Java Web Token (JWT), this is a token generated in order to authenticate against the target org you wish to push data to. Please look at the section **How to generate a JWT** to learn more about it.
 - Domain
-    - A salesforce base domain for the target org.
+    - A salesforce base domain for the target org (either https://login.salesforce.com or https://test.salesforce.com).
 - External Id Field
     - The external id field which is used to perform upsert operations for the target object, the value must be the same as the custom label **customDataSyncFixedExternalId**
   
