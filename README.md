@@ -64,8 +64,11 @@ A record for **Custom Data Sync Target Org** custom metadata type is required wi
     - A salesforce base domain for the target org.
 - External Id Field
     - The external id field which is used to perform upsert operations for the target object, the value must be the same as the custom label **customDataSyncFixedExternalId**
-    
-    
+  
+
+##### Add LWC to the UI
+
+Add the lwc **customDataSyncTabSelector** to the page you desired to see the tool running.
  
  
  ### How to generate a JWT 
